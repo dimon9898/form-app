@@ -20,7 +20,11 @@ function App() {
   }});
 
   useEffect(() => {
-    axios.get('https://form-bot-b75v.onrender.com/subscriptions')
+    axios.get('https://form-bot-b75v.onrender.com/subscriptions', {
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
       .then(resp => {
         setSubs(resp.data);
       })
