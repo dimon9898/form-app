@@ -20,11 +20,7 @@ function App() {
   }});
 
   useEffect(() => {
-    axios.get('https://form-bot-b75v.onrender.com/subscriptions', {
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
+    axios.get('https://form-bot-b75v.onrender.com/subscriptions')
       .then(resp => {
         setSubs(resp.data);
       })
@@ -40,7 +36,7 @@ function App() {
         window.Telegram.WebApp.sendData(JSON.stringify(data, null, 2));
         setIsLoading(false);
         reset();
-      })
+      }, 3000);
     } else {
       alert('ERROR SEND DATA TELEGRAM');
     }
