@@ -128,10 +128,12 @@
   to {transform: rotate(360deg);}
 }
 
-
 @media (max-width: 430px) {
+  .container {
+    align-items: flex-start;
+  }
+
   .center-div {
-    height: 100vh;
-    border-radius: 0px;
+    margin-top: 50px;
   }
 }
