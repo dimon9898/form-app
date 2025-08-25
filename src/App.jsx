@@ -30,12 +30,11 @@ function App() {
   const onSubmit = (data, event) => {
     event.preventDefault();
     setIsLoading(true);
-    alert(JSON.stringify(data, null, 2));
     if (window.Telegram && window.Telegram.WebApp) {
       window.Telegram.WebApp.MainButton.showProgress();
       setTimeout(() => {
         window.Telegram.WebApp.sendData(JSON.stringify(data, null, 2));
-        window.Telegram.WebApp.MainButton.hideProgress();
+         window.Telegram.WebApp.MainButton.hideProgress();
         setIsLoading(false);
         reset();
       }, 3000);
