@@ -20,7 +20,7 @@ function App() {
   }});
 
   useEffect(() => {
-    axios.get('http://localhost:8000/subscriptions')
+    axios.get('https://form-bot-b75v.onrender.com/subscriptions')
       .then(resp => {
         setSubs(resp.data);
       })
